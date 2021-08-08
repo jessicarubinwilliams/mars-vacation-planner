@@ -10,7 +10,11 @@ $('#getInfo').click(function() {
     .then(function(response) {
       console.log(response);
     });
-  PhotoService.getPhoto()
+  PhotoService.getCuriosityPhotos()
+    .then(function(response){
+      console.log(response);
+    });
+  PhotoService.getOpportunityPhotos()
     .then(function(response){
       console.log(response);
     });
