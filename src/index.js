@@ -18,4 +18,8 @@ $('#getInfo').click(function() {
     .then(function(response){
       console.log(response);
     });
+  PhotoService.getSpiritPhotos()
+    .then(function(response){
+      console.log(response);
+    });
 });
