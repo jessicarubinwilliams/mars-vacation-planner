@@ -16,7 +16,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Document',
+      title: 'Mars Vacation Planner',
       template: './src/index.html',
       inject: 'body'
     }),
