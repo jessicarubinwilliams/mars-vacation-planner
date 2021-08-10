@@ -52,22 +52,22 @@ const response = {
     Last_UTC: "2019-08-20T08:43:34Z",
     Season: "winter"
   },
-    260: {
-      AT: {
-        av: -75.95,
-        ct: 300789,
-        mn: -101.715,
-        mx: -28.634
-      },
-      PRE: {
-        av: 762.462,
-        ct: 149206,
-        mn: 741.1254,
-        mx: 777.796
-      },
-      WD: { most_common: null },
-      First_UTC: ":2019-08-20T08:43:34Z",
-      Last_UTC: "2019-08-21T09:23:09Z",
-      Season: "winter"
-    }
+  260: {
+    AT: {
+      av: -75.95,
+      ct: 300789,
+      mn: -101.715,
+      mx: -28.634
+    },
+    PRE: {
+      av: 762.462,
+      ct: 149206,
+      mn: 741.1254,
+      mx: 777.796
+    },
+    WD: { most_common: null },
+    First_UTC: ":2019-08-20T08:43:34Z",
+    Last_UTC: "2019-08-21T09:23:09Z",
+    Season: "winter"
   }
+};
