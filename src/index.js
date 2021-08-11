@@ -72,7 +72,9 @@ const response = {
       mn: 741.1254,
       mx: 777.796
     },
-    WD: { most_common: null },
+    WD: { 
+      most_common: null
+    },
     First_UTC: ":2019-08-20T08:43:34Z",
     Last_UTC: "2019-08-21T09:23:09Z",
     Season: "winter"
@@ -104,9 +106,27 @@ function getWeatherElements(response) {
     const lastSol = parseInt(response.sol_keys[response.sol_keys.length-1]);
     const responseEntries = Object.entries(response);
     responseEntries.forEach((entry) => {
+      if (typeof entry[1] === Array) {
+        return;
+      }
       let entryNumber = parseInt(entry[0]);
-      let htmlToDisplay = `Average Temperature: ${entry[1].AT.av} degrees Fahrenheit, Average atmospheric pressure: ${entry[1].PRE.av} Pa, Most common wind direction: ${entry[1].WD.most_common.compass_point}`;
-      console.log(`string`);
+      let windDirection = "";
+      let avgTemp = "";
+      let avgPressure = "";
+      if (entry[1].WD.most_common === null || typeof entry[1].WD.most_common.compass_point !== String ) {
+        return windDirection = "No valid wind direction data was collected for this day.";
+      } else if (typeof entry[1].WD.most_common === Object) {
+        return windDirection = entry[1].WD.most_common.compass_point;
+      } else if (entry[1].AT === null || typeof entry[1].AT.av != Number) {
+        return avgTemp = "No valid temperature data was collected for this day.";
+      } else if (typeof entry[1].AT.av === Number) {
+        return avgTemp = entry[1].AT.av;
+      } else if (entry[1].PRE === null || typeof entry[1].PRE.av != Number) {
+        return avgPressure = "No valid atmospheric pressure data was collected for this day.";
+      } else if (typeof entry[1].PRE.av === Number) {
+        return avgPressure = entry[1].PRE.av;
+      }
+      let htmlToDisplay = `Average Temperature: ${avgTemp} degrees Fahrenheit, Average atmospheric pressure: ${avgPressure} Pa, Most common wind direction: ${windDirection}`;
       $("#weatherOutput").show();
       if (lastSol - entryNumber === 0) {
         console.log(`temp: ${entry[1].AT.av}`);
