@@ -58,57 +58,43 @@ function getWeatherElements(response) {
         let avgTemp = "";
         let avgPressure = "";
         if (entry[1].WD.most_common === null || typeof entry[1].WD.most_common.compass_point !== "string" ) {
-          // console.log("Something amiss with WD section of API response.");
           windDirection = "No valid wind direction data was collected for this day.";
         } else if (entry[1].WD.most_common !== null) {
-          // console.log("Wind direction response okay.");
           windDirection = entry[1].WD.most_common.compass_point;
         } if (entry[1].AT === null || typeof entry[1].AT.av !== "number") {
-          // console.log("Something amiss with AT section of API response.");
           avgTemp = "No valid temperature data was collected for this day.";
         } else if (typeof entry[1].AT.av === "number") {
-          // console.log("Temperature AT response okay.");
           avgTemp = entry[1].AT.av;
         } if (entry[1].PRE === null || typeof entry[1].PRE.av !== "number") {
-          // console.log("Something amiss with PRE section of API response.");
           avgPressure = "No valid atmospheric pressure data was collected for this day.";
         } else if (typeof entry[1].PRE.av === "number") {
-          // console.log("Pressure response okay.");
           avgPressure = entry[1].PRE.av;
         }
         let htmlToDisplay = `Average Temperature: ${avgTemp} degrees Fahrenheit, Average atmospheric pressure: ${avgPressure} Pa, Most common wind direction: ${windDirection}`;
         $("#weatherOutput").show();
         if (lastSol - entrySol === 0) {
-          console.log(entry[0]);
           $('#one-day').show();
           $('#one-day').append(htmlToDisplay);
         } else if (lastSol - entrySol === 1) {
-          console.log(entry[0]);
           $('#two-days').show();
           $('#two-days').append(htmlToDisplay);
         } else if (lastSol - entrySol === 2) {
-          console.log(entry[0]);
           $('#three-days').show();
           $('#three-days').append(htmlToDisplay);
         } else if (lastSol - entrySol === 3) {
-          console.log(entry[0]);
           $('#four-days').show();
           $('#four-days').append(htmlToDisplay);
         } else if (lastSol - entrySol === 4) {
-          console.log(entry[0]);
           $('#five-days').show();
           $('#five-days').append(htmlToDisplay);
         } else if (lastSol - entrySol === 5) {
-          console.log(entry[0]);
           $('#six-days').show();
           $('#six-days').append(htmlToDisplay);
         } else if (lastSol - entrySol === 6) {
-          console.log(entry[0]);
           $('#seven-days').show();
           $('#seven-days').append(htmlToDisplay);
         }
       }
-      console.log(`looped`);
     });
   } else {
     $('#showErrors').text(`Something is amiss on Mars. NASA hasn't been able to gather any weather data for the past seven days.`);
