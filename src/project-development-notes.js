@@ -84,7 +84,7 @@ export const marsWeatherApiResponse = {
     WD: {
       most_common: { 
         compass_degrees: 202.5,
-        compass_point: "SSW261",
+        compass_point: "SSW",
         compass_right: -0.382683432365,
         compass_up: -0.923879532511,
         ct: 28551
@@ -136,7 +136,7 @@ export const marsWeatherApiResponse = {
     WD: {
       most_common: { 
         compass_degrees: 202.5,
-        compass_point: "SSW262",
+        compass_point: "NNW",
         compass_right: -0.382683432365,
         compass_up: -0.923879532511,
         ct: 28551
@@ -188,7 +188,7 @@ export const marsWeatherApiResponse = {
     WD: {
       most_common: { 
         compass_degrees: 202.5,
-        compass_point: "SSW263",
+        compass_point: "ESE",
         compass_right: -0.382683432365,
         compass_up: -0.923879532511,
         ct: 28551
@@ -240,7 +240,7 @@ export const marsWeatherApiResponse = {
     WD: {
       most_common: { 
         compass_degrees: 202.5,
-        compass_point: "SSW264",
+        compass_point: "WNW",
         compass_right: -0.382683432365,
         compass_up: -0.923879532511,
         ct: 28551
@@ -292,7 +292,7 @@ export const marsWeatherApiResponse = {
     WD: {
       most_common: { 
         compass_degrees: 202.5,
-        compass_point: "SSW265",
+        compass_point: "SSE",
         compass_right: -0.382683432365,
         compass_up: -0.923879532511,
         ct: 28551
