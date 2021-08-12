@@ -34,3 +34,15 @@
 img{
   width:200px;
 }
+
+#opportunity {
+  display: none;
+}
+
+#spirit {
+  display: none;
+}
+
+#curiosity {
+  display: none;
+}
