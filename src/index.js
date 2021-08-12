@@ -58,7 +58,7 @@ function getWeatherElements(response) {
         console.log(entrySol);
         let windDirection = "";
         let avgTemp = "";
-        // let avgPressure = "";
+        let avgPressure = "";
         if (entry[1].WD.most_common === null || typeof entry[1].WD.most_common.compass_point !== "string" ) {
           console.log("Something amiss with WD section of API response.");
           windDirection = "No valid wind direction data was collected for this day.";
@@ -75,16 +75,15 @@ function getWeatherElements(response) {
           console.log("Temperature AT response okay.");
           avgTemp = entry[1].AT.av;
           console.log(avgTemp);
-        } 
-        // else if (entry[1].PRE === null || typeof entry[1].PRE.av !== "number") {
-        //   console.log("Something amiss with PRE section of API response.");
-        //   avgPressure = "No valid atmospheric pressure data was collected for this day.";
-        //   console.log(avgPressure);
-        // } else if (typeof entry[1].PRE.av === "number") {
-        //   console.log("Pressure response okay.");
-        //   avgPressure = entry[1].PRE.av;
-        //   console.log(avgPressure);
-        // }
+        } if (entry[1].PRE === null || typeof entry[1].PRE.av !== "number") {
+          console.log("Something amiss with PRE section of API response.");
+          avgPressure = "No valid atmospheric pressure data was collected for this day.";
+          console.log(avgPressure);
+        } else if (typeof entry[1].PRE.av === "number") {
+          console.log("Pressure response okay.");
+          avgPressure = entry[1].PRE.av;
+          console.log(avgPressure);
+        }
         // let htmlToDisplay = `Average Temperature: ${avgTemp} degrees Fahrenheit, Average atmospheric pressure: ${avgPressure} Pa, Most common wind direction: ${windDirection}`;
         // $("#weatherOutput").show();
         // if (lastSol - entrySol === 0) {
