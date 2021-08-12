@@ -1,26 +1,16 @@
 export const marsWeatherApiResponse = {
   sol_keys: [ "259", "260", "261", "262", "263", "264", "265" ],
   259: {
-    AT: { 
-      av: -71.259,
-      ct: 326642,
-      mn: -101.024,
-      mx: -27.149
-    },
+    AT: null, //intentionally null for errorHandling testing
     HWS: {
       av: 4.259,
       ct: 154146,
       mn: 0.156,
       mx: 17.617
     },
-    PRE: {
-      av: 761.259,
-      ct: 163012,
-      mn: 742.1498,
-      mx: 780.3891
-    },
+    PRE: null, //intentionally null for errorHandling testing
     WD: {
-      most_common: null,
+      most_common: null, //intentionally null for errorHandling testing
       8: {
         compass_degrees: 180.0,
         compass_point: "S",
@@ -48,13 +38,13 @@ export const marsWeatherApiResponse = {
   },
   260: {
     AT: {
-      av: -75.260,
+      av: "-75.260", //intentionally a string for error handling testing
       ct: 300789,
       mn: -101.715,
       mx: -28.634
     },
     PRE: {
-      av: 762.260,
+      av: "762.260", //intentionally a string for error handling testing
       ct: 149206,
       mn: 741.1254,
       mx: 777.796
@@ -62,7 +52,7 @@ export const marsWeatherApiResponse = {
     WD: { 
       most_common: {
         compass_degrees: 202.5,
-        compass_point: "SSW260",
+        compass_point: 260, //intentionally a number for error handling testing
         compass_right: -0.382683432365,
         compass_up: -0.923879532511,
         ct: 28551
