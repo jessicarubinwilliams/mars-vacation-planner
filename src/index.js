@@ -29,18 +29,21 @@ $('#getInfo').click(function() {
 
 function getCuriosityPhotoElements(response){
   if(response.latest_photos){
+    $("#curiosity").show();
     $("#curiosityPhotos").attr("src",response.latest_photos[0].img_src);
   }
 }
 
 function getOpportunityPhotoElements(response){
   if(response.latest_photos){
+    $("#opportunity").show();
     $("#opportunityPhotos").attr("src",response.latest_photos[0].img_src);
   }
 }
 
 function getSpiritPhotoElements(response){
   if(response.latest_photos){
+    $("#spirit").show();
     $("#spiritPhotos").attr("src",response.latest_photos[0].img_src);
   }
 }
