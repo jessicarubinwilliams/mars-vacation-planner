@@ -2,17 +2,16 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-// import WeatherService from './weather-service.js';
+import WeatherService from './weather-service.js';
 import PhotoService from './photo-service.js';
-import { marsWeatherApiResponse } from './project-development-notes.js';
+// import { marsWeatherApiResponse } from './sample-weather-api-response.js';
 
 $('#getInfo').click(function() {
-  // WeatherService.getWeather();
-    // .then(function(response) {
-    //   getWeatherElements(response);
-    // });
-    // 
-    getWeatherElements(marsWeatherApiResponse);
+  WeatherService.getWeather()
+    .then(function(response) {
+      getWeatherElements(response);
+    });
+  // getWeatherElements(marsWeatherApiResponse);
   PhotoService.getCuriosityPhotos()
     .then(function(response){
       getCuriosityPhotoElements(response);
